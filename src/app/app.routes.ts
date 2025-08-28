@@ -8,6 +8,7 @@ export const routes: Routes = [
         import('./gifs/pages/dashboard-page/dashboard-page.component'),
 
       children: [
+
         {
           path: 'trending',
             loadComponent: () =>
@@ -19,11 +20,17 @@ export const routes: Routes = [
             loadComponent: () =>
               import('./gifs/pages/search-page/search-page.component')
         },
+
+        {
+          path: '**',
+            redirectTo: 'trending',
+        },
+
       ]
   },
 
   {
     path: '**',
       redirectTo: 'dashboard',
-  }
+  },
 ];
